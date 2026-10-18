@@ -1,32 +1,29 @@
-# Complaint Specification
+# Agent Spec
 
 ## Objective
-Translate the discovered business need into a clear, testable product specification for complaint intake, triage, and resolution.
+Define the investigation agent specification and the business outcomes it needs to support for complaint handling.
 
-## Business problem
-The complaint-resolution process needs a shared definition of the workflow, customer journey, business rules, and success criteria so engineering, QA, and operations understand the same target.
+## Business outcome
+The business needs a defined investigation agent that can reason about complaint evidence, actions, and policy obligations.
 
-## Requirements gathered
-- Document complaint intake, triage, and resolution flow end to end.
-- Define user stories, scope, and boundaries for the complaint system.
-- Capture functional rules for severity, routing, evidence, and escalation.
-- State acceptance criteria that can be validated across business and technical teams.
+## Implemented solution
+### 1) Agent objective
+The investigation agent should identify the missing fact, gather evidence, and propose the next operational step with clear traceability.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+Case in -> collect facts -> reason over policy -> decide on next action -> summarise findings -> request approval if needed
+```
 
-## Success metrics
-- Each complaint has a clear workflow from intake to resolution.
-- Analysts and support teams can route work consistently.
-- Acceptance criteria are testable by business and engineering stakeholders.
-- The system supports review, escalation, and audit needs.
+### 2) Trust guardrails
+- do not make arbitrary decisions without evidence
+- respect the policy and operational boundary
+- surface uncertainty clearly
+- escalate sensitive actions to a human reviewer
+
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This specification becomes the contract for later system build, validation, and handoff across prompt, data, API, and agent phases.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

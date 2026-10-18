@@ -1,32 +1,40 @@
-# Exercise 2 5 2 Week2 Release
+# Week 2 Release
 
 ## Objective
-Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
+Demonstrate a complete Week 2 release package showing that the team has built a viable complaint-processing foundation with data, analysis, and repository discipline.
 
-## Business problem
-The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
+## Business outcome
+The bank wants evidence that the project can move beyond discovery into implementation without breaking data quality or operational clarity.
 
-## Requirements gathered
-- Define the real problem and required output for the exercise.
-- Document the key business workflow and technical requirements.
-- Capture risks, quality checks, and acceptance criteria.
-- Translate the result into a handoff-ready deliverable for the next step.
+## Implemented solution
+### Release summary
+The deliverable this week is a complaint foundation that includes:
+- a complaint data model with customers, accounts, categories, evidence, and service requests,
+- SQL queries that answer operational business questions,
+- Python analysis that validates data quality and summarises complaint trends,
+- a repository layout that separates domain, API, and service concerns,
+- seeded data that allows repeatable testing and discussion with stakeholders.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+### Release evidence
+```text
+Completed work:
+1. Schema designed and documented for complaint lifecycle management
+2. Basic and advanced SQL queries created for operational reporting
+3. Python analysis script created for trend and SLA checking
+4. Repository structure established for maintainable delivery
+5. Synthetic dataset seeded for validation and walkthroughs
+```
 
-## Success metrics
-- The output solves the real business need.
-- The artefact is explicit and reviewable.
-- The team can move to the next sprint phase with less ambiguity.
-- The solution is grounded in the practical complaint workflow.
+### Business value delivered
+- The team can understand complaint volume and main issue categories.
+- Analysts can query customer and product context with joins and summary queries.
+- The data model is stable enough to support service and API development.
+- The project is now ready for the next sprint?s service and API work.
+
+## Release criteria
+- The solution is measurable and testable.
+- The output is understandable to both technical and business stakeholders.
+- The work is ready for handoff into the next sprint without rework.
 
 ## Handoff
-This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This Week 2 release is a working foundation for the next sprint, where the team will formalise the complaint service and REST API layer.

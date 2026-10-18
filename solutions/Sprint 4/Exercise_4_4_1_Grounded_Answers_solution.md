@@ -1,32 +1,26 @@
-# Exercise 4 4 1 Grounded Answers
+# Grounded Answers
 
 ## Objective
-Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
+Generate grounded responses using retrieved evidence rather than unsupported model guesses.
 
-## Business problem
-The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
+## Business outcome
+The complaint assistant must answer with evidence and clear citations so users trust the conclusion.
 
-## Requirements gathered
-- Define the real problem and required output for the exercise.
-- Document the key business workflow and technical requirements.
-- Capture risks, quality checks, and acceptance criteria.
-- Translate the result into a handoff-ready deliverable for the next step.
+## Implemented solution
+### 1) Answering pattern
+```text
+1. identify the user question
+2. retrieve the strongest evidence
+3. structure the answer with a clear summary and citation list
+4. state uncertainty when evidence is incomplete or conflicting
+```
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+A good grounded answer explicitly names the evidence and ties it to the complaint context instead of producing unsupported general advice.
 
-## Success metrics
-- The output solves the real business need.
-- The artefact is explicit and reviewable.
-- The team can move to the next sprint phase with less ambiguity.
-- The solution is grounded in the practical complaint workflow.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

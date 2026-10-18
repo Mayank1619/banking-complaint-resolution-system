@@ -1,32 +1,70 @@
-# Data Query and Validation Workbook
+# SQL Metrics
 
 ## Objective
-Use SQL to validate complaint data, answer business questions, and confirm the data model supports operational analysis.
+Translate the complaint dataset into operational KPIs that help track resolution quality, case volume, and service pressure.
 
-## Business problem
-The banking team needs a reliable way to inspect complaint data, calculate trends, and verify that the data model reflects real operating needs.
+## Business outcome
+The bank does not only need to count complaints; it needs to know whether the complaint handling process is healthy and where operational pain points are emerging.
 
-## Requirements gathered
-- Create queries that answer business questions about complaint volume, category, and urgency.
-- Use joins and aggregation logic to combine complaint and customer data meaningfully.
-- Validate the schema against realistic data and edge cases.
-- Document how the data should be interpreted for operational reporting.
+## Implemented solution
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+### 1) Complaint volume by month
+```sql
+SELECT
+    DATE_TRUNC('month', submitted_at) AS month_start,
+    COUNT(*) AS complaint_total
+FROM complaints
+GROUP BY DATE_TRUNC('month', submitted_at)
+ORDER BY month_start;
+```
 
-## Success metrics
-- The team can answer key complaint questions from the data.
-- Data quality issues are identified before they reach downstream systems.
-- The results support business review and operational monitoring.
-- The SQL logic is ready for later dashboard and reporting work.
+### 2) Resolution rate by category
+```sql
+SELECT
+    cc.category_name,
+    COUNT(*) AS total_cases,
+    COUNT(CASE WHEN c.complaint_status = 'resolved' THEN 1 END) AS resolved_cases,
+    ROUND(
+        100.0 * COUNT(CASE WHEN c.complaint_status = 'resolved' THEN 1 END) / NULLIF(COUNT(*), 0),
+        2
+    ) AS resolution_rate_pct
+FROM complaints c
+JOIN complaint_categories cc
+    ON c.category_id = cc.category_id
+GROUP BY cc.category_name
+ORDER BY resolution_rate_pct ASC;
+```
+
+### 3) Complaints that breach target resolution time
+```sql
+SELECT
+    category_name,
+    COUNT(*) AS at_risk_cases
+FROM (
+    SELECT
+        cc.category_name,
+        c.complaint_id,
+        c.resolution_due_at,
+        c.resolved_at
+    FROM complaints c
+    JOIN complaint_categories cc
+        ON c.category_id = cc.category_id
+    WHERE c.resolved_at IS NOT NULL
+      AND c.resolved_at > c.resolution_due_at
+) x
+GROUP BY category_name
+ORDER BY at_risk_cases DESC;
+```
+
+## Managerial interpretation
+- Monthly complaint volume highlights workload trend and seasonal risk.
+- Resolution-rate KPIs show which issue types are hard to close on time.
+- Breach measures expose where service recovery or process changes are required.
+
+## Acceptance criteria
+- Metrics are simple to explain to a business audience.
+- The KPIs are tied to the decisions teams need to make.
+- The queries can be reused as dashboard building blocks.
 
 ## Handoff
-This query and validation work is the evidence base for the analytical view of the complaint process and the readiness of the future system.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+These KPIs become the analytical foundation for the later Python analysis and the operational story for the Week 2 release.

@@ -1,32 +1,50 @@
-# Data Query and Validation Workbook
+# Retrieval Decision
 
 ## Objective
-Use SQL to validate complaint data, answer business questions, and confirm the data model supports operational analysis.
+Decide when to use structured SQL, policy retrieval, or synthetic reasoning so the complaint workflow is based on evidence rather than guesswork.
 
-## Business problem
-The banking team needs a reliable way to inspect complaint data, calculate trends, and verify that the data model reflects real operating needs.
+## Business outcome
+A complaint support assistant should answer questions with the right source of truth: fact tables for operational metrics, retrieval for policy and procedure, and human review where the answer affects customer remediation.
 
-## Requirements gathered
-- Create queries that answer business questions about complaint volume, category, and urgency.
-- Use joins and aggregation logic to combine complaint and customer data meaningfully.
-- Validate the schema against realistic data and edge cases.
-- Document how the data should be interpreted for operational reporting.
+## Implemented solution
+The appropriate pattern depends on the question type:
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+### Use SQL when the answer is factual and auditable
+- Count of complaints in the last 30 days
+- Open unresolved cases by category
+- default response timing by customer segment
 
-## Success metrics
-- The team can answer key complaint questions from the data.
-- Data quality issues are identified before they reach downstream systems.
-- The results support business review and operational monitoring.
-- The SQL logic is ready for later dashboard and reporting work.
+```sql
+SELECT
+    complaint_channel,
+    COUNT(*) AS complaint_count
+FROM complaints
+WHERE submitted_at >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY complaint_channel
+ORDER BY complaint_count DESC;
+```
+
+### Use retrieval when the answer depends on policy or procedural guidance
+Examples:
+- what policy applies to unauthorised card activity,
+- where to escalate a repeated complaint,
+- which evidence should be reviewed before a closure decision is made.
+
+### Use a hybrid pattern for production-grade support
+1. query the complaint and account facts
+2. retrieve the relevant policy or procedure
+3. assemble the answer with source citations
+4. route risky or high-impact cases to human approval
+
+## Decision framework
+- if the data exists in the database, query it directly,
+- if the answer requires explanatory guidance, retrieve the policy or document,
+- if the response affects financial remediation or legal obligations, require human verification before closure.
+
+## Acceptance criteria
+- The system chooses the evidence source that matches the question.
+- Unsupported answers are rejected or clearly labelled as low confidence.
+- Human review remains available for sensitive decisions.
 
 ## Handoff
-This query and validation work is the evidence base for the analytical view of the complaint process and the readiness of the future system.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This retrieval decision model becomes the backbone for the later grounded-answer and agent workflows.

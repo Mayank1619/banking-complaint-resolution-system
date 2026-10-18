@@ -1,32 +1,29 @@
-# Exercise 1 5 2 Week1 Showcase
+# Week 1 Showcase
 
 ## Objective
-Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
+Package the first sprint deliverables into a coherent stakeholder-ready summary and release narrative.
 
-## Business problem
-The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
+## Business outcome
+Stakeholders need a concise, confidence-building summary of the project foundation and the first working outputs.
 
-## Requirements gathered
-- Define the real problem and required output for the exercise.
-- Document the key business workflow and technical requirements.
-- Capture risks, quality checks, and acceptance criteria.
-- Translate the result into a handoff-ready deliverable for the next step.
+## Implemented solution
+### Release summary
+The Week 1 release delivers a common complaint-language baseline and the first working problem definition.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+Delivered:
+1. requirements and scope workbook
+2. repository structure and working conventions
+3. initial complaint specification and personas
+4. classifier and extraction design
+```
 
-## Success metrics
-- The output solves the real business need.
-- The artefact is explicit and reviewable.
-- The team can move to the next sprint phase with less ambiguity.
-- The solution is grounded in the practical complaint workflow.
+This creates a stable foundation for sprint 2 where the team will turn discovery into data, SQL, and implementation-ready logic.
+
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

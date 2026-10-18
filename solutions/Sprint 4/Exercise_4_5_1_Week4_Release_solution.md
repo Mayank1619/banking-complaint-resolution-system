@@ -1,32 +1,28 @@
-# Exercise 4 5 1 Week4 Release
+# Week 4 Release
 
 ## Objective
-Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
+Provide a release-ready summary of the RAG build and its evidence quality, risks, and value.
 
-## Business problem
-The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
+## Business outcome
+The sprint needs a credible release summary showing the RAG pipeline is working and measurable.
 
-## Requirements gathered
-- Define the real problem and required output for the exercise.
-- Document the key business workflow and technical requirements.
-- Capture risks, quality checks, and acceptance criteria.
-- Translate the result into a handoff-ready deliverable for the next step.
+## Implemented solution
+### Release summary
+Sprint 4 delivers the RAG foundation: document ingestion, metadata model, retrieval service, and grounded response workflow.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+Delivered:
+- policy and knowledge ingestion
+- metadata model for traceability
+- chunking and vector storage approach
+- grounded answer generation with evaluation guardrails
+```
+The project is now ready to evolve into tool-using agents and multi-agent orchestration in Sprint 5.
 
-## Success metrics
-- The output solves the real business need.
-- The artefact is explicit and reviewable.
-- The team can move to the next sprint phase with less ambiguity.
-- The solution is grounded in the practical complaint workflow.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

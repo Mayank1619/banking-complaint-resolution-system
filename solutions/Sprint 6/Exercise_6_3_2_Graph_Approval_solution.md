@@ -1,32 +1,25 @@
-# Exercise 6 3 2 Graph Approval
+# Graph Approval
 
 ## Objective
-Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
+Add approval workflows across the graph so sensitive customer outcomes require governance and traceability.
 
-## Business problem
-The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
+## Business outcome
+Sensitive decisions need governance checkpoints across the graph so no step can bypass accountability.
 
-## Requirements gathered
-- Define the real problem and required output for the exercise.
-- Document the key business workflow and technical requirements.
-- Capture risks, quality checks, and acceptance criteria.
-- Translate the result into a handoff-ready deliverable for the next step.
+## Implemented solution
+### 1) Governance rules
+Any action with customer financial impact or legal risk must be approved by a designated human official in the graph.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+result = check_approval_needed(action, case_risk)
+if result.requires_approval:
+    escalate_to_human_review()
+```
 
-## Success metrics
-- The output solves the real business need.
-- The artefact is explicit and reviewable.
-- The team can move to the next sprint phase with less ambiguity.
-- The solution is grounded in the practical complaint workflow.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

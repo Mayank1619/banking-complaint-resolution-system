@@ -1,32 +1,33 @@
-# Complaint Specification
+# Complaint Spec
 
 ## Objective
-Translate the discovered business need into a clear, testable product specification for complaint intake, triage, and resolution.
+Write the initial business and functional specification for complaint intake, triage, and resolution.
 
-## Business problem
-The complaint-resolution process needs a shared definition of the workflow, customer journey, business rules, and success criteria so engineering, QA, and operations understand the same target.
+## Business outcome
+A shared specification is needed so engineering, analysts, and stakeholders can agree on complaint intake, triage, and resolution behaviour.
 
-## Requirements gathered
-- Document complaint intake, triage, and resolution flow end to end.
-- Define user stories, scope, and boundaries for the complaint system.
-- Capture functional rules for severity, routing, evidence, and escalation.
-- State acceptance criteria that can be validated across business and technical teams.
+## Implemented solution
+### 1) Business scope
+The complaint system must support complaint intake, triage, evidence review, customer communications, and final resolution tracking.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+User stories
+1. As a customer, I can submit a complaint with enough detail to allow triage.
+2. As a case handler, I can view complaint context, account history, and evidence.
+3. As a team lead, I can escalate high-risk cases and track SLA breaches.
+4. As an analyst, I can query complaint trends and understand root causes.
+```
 
-## Success metrics
-- Each complaint has a clear workflow from intake to resolution.
-- Analysts and support teams can route work consistently.
-- Acceptance criteria are testable by business and engineering stakeholders.
-- The system supports review, escalation, and audit needs.
+### 2) Functional requirements
+- complaint status must be explicit and auditable
+- priority and severity must be derived from policies and evidence
+- every update must be stored with a timestamp and actor
+- high-impact cases must route to approved review paths
+
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This specification becomes the contract for later system build, validation, and handoff across prompt, data, API, and agent phases.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

@@ -1,32 +1,35 @@
-# Fact Extraction Workbook
+# Fact Extraction
 
 ## Objective
-Extract the critical customer, account, and issue facts needed to understand and resolve a complaint reliably.
+Specify the extraction rules that pull the important facts out of unread complaint text and structure them for downstream use.
 
-## Business problem
-Once the complaint is classified, the next challenge is transforming raw text into structured fields that can support triage, routing, and investigation.
+## Business outcome
+Operational teams need the critical facts from each complaint pulled into a structured form so downstream analysis and decisioning are reliable.
 
-## Requirements gathered
-- Identify the critical fields needed for complaint investigation and action.
-- Define the extraction schema for product, issue type, customer, amount, dates, and evidence.
-- Specify how uncertain or missing facts should be flagged for review.
-- Validate the extracted output against repeatable sample scenarios.
+## Implemented solution
+### 1) Extraction rules
+Parse complaint text to gather:
+- customer id or account id
+- product and channel
+- dates, amounts, and transaction references
+- issue description and supporting evidence paths
+- customer impact and urgency indicators
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```python
+extracted = {
+    "customer_id": "C-184220",
+    "account_id": "A-90234",
+    "product": "credit_card",
+    "complaint_type": "unauthorised_transaction",
+    "amount": 320.50,
+    "reported_at": "2026-10-08T14:15:00Z",
+}
+```
 
-## Success metrics
-- Key facts are captured consistently across complaints.
-- Investigators can act on structured evidence instead of raw text alone.
-- Data quality improves for later analysis and reporting.
-- Uncertain outputs are traced for human review instead of silently accepted.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-The fact extraction output becomes the input for downstream investigation, routing, and reporting workflows.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

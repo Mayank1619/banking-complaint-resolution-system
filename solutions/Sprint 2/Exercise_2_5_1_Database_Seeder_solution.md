@@ -1,32 +1,64 @@
-# Data Query and Validation Workbook
+# Database Seeder
 
 ## Objective
-Use SQL to validate complaint data, answer business questions, and confirm the data model supports operational analysis.
+Generate realistic complaint data so the system can be tested with meaningful scenarios rather than empty or artificial records.
 
-## Business problem
-The banking team needs a reliable way to inspect complaint data, calculate trends, and verify that the data model reflects real operating needs.
+## Business outcome
+An engineering team needs seeded complaint records that reflect realistic complaint channels, categories, customers, and service events so they can validate query logic and workflow quality.
 
-## Requirements gathered
-- Create queries that answer business questions about complaint volume, category, and urgency.
-- Use joins and aggregation logic to combine complaint and customer data meaningfully.
-- Validate the schema against realistic data and edge cases.
-- Document how the data should be interpreted for operational reporting.
+## Implemented solution
+```python
+import random
+from datetime import datetime, timedelta
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+customers = [
+    {'customer_id': 1, 'first_name': 'Aisha', 'last_name': 'Patel'},
+    {'customer_id': 2, 'first_name': 'Daniel', 'last_name': 'Moran'},
+    {'customer_id': 3, 'first_name': 'Sofia', 'last_name': 'Nguyen'},
+]
 
-## Success metrics
-- The team can answer key complaint questions from the data.
-- Data quality issues are identified before they reach downstream systems.
-- The results support business review and operational monitoring.
-- The SQL logic is ready for later dashboard and reporting work.
+accounts = [
+    {'account_id': 1001, 'customer_id': 1, 'account_type': 'Current Account', 'product_name': 'Everyday Plus'},
+    {'account_id': 1002, 'customer_id': 2, 'account_type': 'Savings', 'product_name': 'Online Saver'},
+    {'account_id': 1003, 'customer_id': 3, 'account_type': 'Credit Card', 'product_name': 'Travel Rewards'},
+]
+
+categories = ['fraud', 'payment_failed', 'unauthorised_transaction', 'service_delay', 'fees_and_charges']
+channels = ['web', 'phone', 'branch', 'mobile_app']
+
+records = []
+for i in range(1, 51):
+    customer = random.choice(customers)
+    account = next(a for a in accounts if a['customer_id'] == customer['customer_id'])
+    category = random.choice(categories)
+    channel = random.choice(channels)
+    submitted = datetime.utcnow() - timedelta(days=random.randint(1, 90))
+    due = submitted + timedelta(days=random.randint(3, 20))
+    records.append({
+        'complaint_id': i,
+        'customer_id': customer['customer_id'],
+        'account_id': account['account_id'],
+        'category': category,
+        'complaint_channel': channel,
+        'complaint_status': random.choice(['open', 'in_review', 'resolved']),
+        'submitted_at': submitted.isoformat(),
+        'resolution_due_at': due.isoformat(),
+    })
+
+print(records[:3])
+```
+
+## What this produces
+The seeder creates a realistic volume of complaint data that reflects:
+- multiple customer journeys,
+- different complaint categories,
+- different channels,
+- varying resolution urgency and status.
+
+## Acceptance criteria
+- Seed data reflects realistic complaint patterns and operational variability.
+- The output is easy to query and explain.
+- The dataset supports testing SQL, Python analysis, and downstream triage logic.
 
 ## Handoff
-This query and validation work is the evidence base for the analytical view of the complaint process and the readiness of the future system.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This seeded data is the working evidence set used in the week 2 release and later retrieval and scoring exercises.

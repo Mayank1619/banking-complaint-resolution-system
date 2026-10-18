@@ -1,32 +1,26 @@
-# API and Service Delivery Workbook
+# Retrieval Service
 
 ## Objective
-Design a reliable complaint service API and supporting domain model that can handle recorded complaint data and operational actions.
+Build a retrieval service that returns the best supporting context for a complaint question or investigation.
 
-## Business problem
-The business now needs an implementation-ready interface for complaint creation, retrieval, review, and approval so the workflow can support real operational work.
+## Business outcome
+The system requires a retrieval layer that returns the right evidence based on relevance, freshness, and source quality.
 
-## Requirements gathered
-- Define the domain model for complaints, evidence, and supporting entities.
-- Create service responsibilities and API routes for complaint workflow actions.
-- Specify validation, error handling, and approval points for sensitive decisions.
-- Document how the API supports business operations and downstream analytics.
+## Implemented solution
+### 1) Retrieval function
+```python
+def retrieve_context(question: str, product: str, top_k: int = 5):
+    query_vector = embed(question)
+    matches = index.search(query_vector, product=product, top_k=top_k)
+    return [m for m in matches if m.score >= 0.55]
+```
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+This retrieval service is used to build grounded answers for fact-based questions and policy lookup tasks.
 
-## Success metrics
-- The service layer matches real operational use cases.
-- Exceptions and approval points are explicit and testable.
-- The API can support front-end and downstream integration safely.
-- The domain model is clearer and easier to evolve.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This API and service work becomes the operational layer that connects the complaint workflow to actual intelligent processing and review.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

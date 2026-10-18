@@ -1,32 +1,49 @@
-# Repository Setup Workbook
+# Repository Setup
 
 ## Objective
-Create the project foundation needed for disciplined, traceable, and repeatable delivery.
+Set up a clean repository structure and development baseline so the team can work in a stable, traceable way from the first sprint onward.
 
-## Business problem
-The team needs a reliable repository structure and working convention so the complaint-resolution project can evolve without confusion, broken handoffs, or environment drift.
+## Business outcome
+The team needs a consistent project skeleton that supports traceability, delivery quality, and shared development from day one.
 
-## Requirements gathered
-- Define the project structure, folders, and naming conventions.
-- Set up a clear baseline for code, tests, docs, and data assets.
-- Document environment setup and dependency expectations for all contributors.
-- Create handoff and review rules that keep work traceable across sprint phases.
+## Implemented solution
+### 1) Repository structure
+```text
+banking-complaint-resolution/
+??? README.md
+??? .github/
+?   ??? workflows/
+?   ??? pull_request_template.md
+??? app/
+?   ??? api/
+?   ??? domain/
+?   ??? repositories/
+?   ??? services/
+?   ??? main.py
+??? data/
+?   ??? raw/
+?   ??? curated/
+??? tests/
+?   ??? unit/
+?   ??? integration/
+??? docs/
+?   ??? requirements/
+?   ??? architecture/
+??? requirements.txt
+??? pyproject.toml
+??? Makefile
+```
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+### 2) Operational guidance
+- keep domain, API, and data concerns separate
+- store evidence and raw data distinctly from curated working files
+- write tests before a major workflow change
+- keep release notes and assumptions in docs
 
-## Success metrics
-- The team can onboard quickly with a consistent repo layout.
-- Environment drift is reduced across contributors.
-- Work is easier to review, trace, and hand off.
-- Sprint iterations start from a clean and predictable baseline.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This repository baseline supports the later delivery work, testing, and team continuity across the complaint-resolution project.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

@@ -1,32 +1,29 @@
-# Personas and Customer Journey
+# Personas Journeys
 
 ## Objective
-Map the people, touchpoints, and emotional journey behind customer complaint handling so the workflow meets real user needs.
+Map the main personas and complaint journeys so the system matches real customer and operational behaviour.
 
-## Business problem
-Customers experience complaints across multiple channels and often feel frustrated when the issue is not understood quickly. Internal teams also need a consistent, low-friction way to investigate and resolve complaints.
+## Business outcome
+Customer and agent journeys must be explicit so the experience and escalation logic reflect reality instead of an abstract assumption.
 
-## Requirements gathered
-- Document the key personas involved in complaint intake and resolution.
-- Map the journey from complaint submission to resolution and closure.
-- Highlight pain points, delays, and friction in today’s process.
-- Define the experience and supports needed for each persona.
+## Implemented solution
+### 1) Primary personas
+- customer raising a complaint
+- agent handling the intake and triage
+- specialist investigating complex or financial-risk cases
+- analyst reviewing patterns and escalations
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+### 2) Journey map
+```text
+Submit complaint -> classify issue -> attach evidence -> assign owner -> investigate -> customer update -> resolution -> closure
+```
 
-## Success metrics
-- Customer journeys are easier to understand and improve.
-- Support teams can prioritise the right interventions.
-- Approved processes make risk and complaint handling more consistent.
-- Escalations and pain points are visible before implementation.
+The journey is not complete until status, evidence, and next actions are recorded in the case record.
+
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-The persona and journey findings become the basis for product decisions, service design, and later automated workflow design.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

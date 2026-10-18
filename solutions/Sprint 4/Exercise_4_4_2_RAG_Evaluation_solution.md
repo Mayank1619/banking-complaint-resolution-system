@@ -1,32 +1,26 @@
-# Retrieval and Agent Solution Workbook
+# RAG Evaluation
 
 ## Objective
-Create a grounded complaint support workflow using retrieval, policy context, and agent logic that can reason from evidence and present a reviewable recommendation.
+Evaluate answer quality, retrieval relevance, and compliance against a clear checklist.
 
-## Business problem
-The complaint system needs to retrieve relevant policy, account, and case history so it can formulate a response grounded in real evidence rather than unsupported assumptions.
+## Business outcome
+The team needs objective quality checks to ensure answers are grounded, relevant, and consistent.
 
-## Requirements gathered
-- Define the retrieval sources for policy, evidence, and complaint context.
-- Capture the business logic for grounding recommendations in source material.
-- Specify oversight, escalation, and human approval points for sensitive decisions.
-- Document how the system remains traceable and auditable throughout the workflow.
+## Implemented solution
+### 1) Evaluation checks
+- retrieval relevance score
+- groundedness and citation presence
+- factual consistency with known policy text
+- answer usefulness for the complaint handler
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+pass if citation coverage >= 80% and no unsupported claim is present
+```
 
-## Success metrics
-- Retrieval and reasoning are grounded in evidence and policy context.
-- High-risk decisions remain under human oversight.
-- The workflow is auditable and explainable to business reviewers.
-- The solution is ready for later orchestrated multi-agent extension.
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This retrieval and agent design forms the decisioning layer for complaint resolution and operational review.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.

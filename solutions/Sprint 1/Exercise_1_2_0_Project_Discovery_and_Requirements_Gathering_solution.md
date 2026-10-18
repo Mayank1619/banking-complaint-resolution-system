@@ -1,33 +1,36 @@
-# Requirements Discovery Workbook
+# Project Discovery and Requirements Gathering
 
 ## Objective
-Define the actual business problem, stakeholder needs, scope, constraints, and measurable success criteria for the complaint-resolution capability.
+Define the business, customer, and operational goals for the complaint-resolution platform and convert them into a clear, testable requirements set.
 
-## Business problem
-Customers contact the bank with issues including failed payments, account access problems, incorrect fees, service failures, and fraud concerns. These complaints arrive through fragmented channels and need a consistent intake, triage, and review process.
+## Business outcome
+The business needs a clear definition of the complaint-management problem, the target users, and the measurable outcomes before any technical build begins.
 
-## Requirements gathered
-- Capture complaint details including issue description, channel, product, and evidence context.
-- Identify key stakeholders, business goals, and user needs across the complaint journey.
-- Define scope, assumptions, and constraints for the first implementation phase.
-- Document functional and non-functional requirements that will drive the next sprint specification.
-- Record risks, open questions, and success measures for later validation.
+## Implemented solution
+### 1) Discovery findings
+The complaint-resolution programme should solve a real operational issue: customers report dissatisfaction when complaint status is unclear, evidence is fragmented, or response decisions are slow and inconsistent.
 
-## Key outputs to produce
-- Stakeholder and scope overview
-- Functional requirements and constraints
-- Quality gates and edge cases
-- Acceptance criteria tied to the sprint objective
-- Clear handoff notes for downstream work
+```text
+Customer problem
+- complaint submission is inconsistent
+- account and product context is not always attached
+- response ownership is unclear
+- there are no clear SLA checkpoints
+```
 
-## Success metrics
-- Complaint triage time is reduced.
-- Classification consistency improves across repeated cases.
-- More complaints reach the correct team on the first pass.
-- Analysts can explain which evidence and facts supported a decision.
+### 2) Working requirements
+- intake must preserve complaint metadata, channel, and customer identifiers
+- every complaint must have a status, priority, and assigned owner
+- evidence must be attached or linked to the case record
+- escalation rules should be defined for fraud, vulnerable customers, and repeated complaints
+
+### 3) Downstream handoff
+These requirements become the basis for the data model, service layer, and later RAG and agent design.
+
+## Acceptance criteria
+- The solution is specific, testable, and aligned to the complaint-resolution journey.
+- The implementation is evidence-driven and built to be reviewed by both technical and business stakeholders.
+- The output includes clear downstream handoff notes for the next stage of work.
 
 ## Handoff
-This discovery workbook becomes the source of truth for later specification, data design, prompt work, and delivery planning.
-
-## Completion status
-Completed as the actual solution for this exercise in the banking complaint-resolution programme.
+This solution is the working artefact for the next sprint or technical phase and should be retained as the canonical implementation narrative for this exercise.
