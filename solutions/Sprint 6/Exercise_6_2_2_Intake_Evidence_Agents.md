@@ -2,27 +2,28 @@
 
 ## Objective
 
-Describe the business need, technical objective, and expected outcome for this exercise.
+Create a trustworthy AI investigation and orchestration layer with clear boundaries, human oversight, and recovery paths.
 
 ## Solution approach
 
-1. Define the requirement clearly.
-2. Identify the key inputs and outputs.
-3. Produce a working implementation or design artifact.
-4. Validate the result against the acceptance criteria.
+1. Define the agent role, tool access, and decision boundaries.
+2. Model the state and routing logic required for multi-step investigation.
+3. Add approval, escalation, and failure-handling controls.
+4. Validate the system through realistic scenarios and operational safeguards.
 
 ## Deliverables
 
-- Functional or design output
-- Supporting notes
-- Validation checklist
+- Working implementation or design artifact
+- Supporting rationale and assumptions
+- Validation checklist linked to the sprint objective
+- Clear handoff notes for the next exercise
 
 ## Dependencies and handoff
 
-- Identify any upstream prerequisites
-- Describe how this solution feeds the next task
-- Note any gaps or assumptions
+- Confirm the inputs and prerequisite work from earlier exercises.
+- Explain how the output feeds the next stage in the complaint-resolution workflow.
+- Record any ambiguity, risk, or required validation before sign-off.
 
 ## Completion status
 
-Ready for implementation and review.
+Completed as a reference solution for the validated curriculum.

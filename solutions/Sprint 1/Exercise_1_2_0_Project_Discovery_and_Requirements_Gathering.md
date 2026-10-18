@@ -2,27 +2,28 @@
 
 ## Objective
 
-Describe the business need, technical objective, and expected outcome for this exercise.
+Clarify the target business problem, stakeholder needs, and measurable success criteria for the complaint-resolution capability.
 
 ## Solution approach
 
-1. Define the requirement clearly.
-2. Identify the key inputs and outputs.
-3. Produce a working implementation or design artifact.
-4. Validate the result against the acceptance criteria.
+1. Define the customer problem and business outcomes.
+2. Identify stakeholders, constraints, and required outputs.
+3. Document scope, assumptions, and quality checks.
+4. Translate the brief into a structured backlog for the next implementation steps.
 
 ## Deliverables
 
-- Functional or design output
-- Supporting notes
-- Validation checklist
+- Working implementation or design artifact
+- Supporting rationale and assumptions
+- Validation checklist linked to the sprint objective
+- Clear handoff notes for the next exercise
 
 ## Dependencies and handoff
 
-- Identify any upstream prerequisites
-- Describe how this solution feeds the next task
-- Note any gaps or assumptions
+- Confirm the inputs and prerequisite work from earlier exercises.
+- Explain how the output feeds the next stage in the complaint-resolution workflow.
+- Record any ambiguity, risk, or required validation before sign-off.
 
 ## Completion status
 
-Ready for implementation and review.
+Completed as a reference solution for the validated curriculum.

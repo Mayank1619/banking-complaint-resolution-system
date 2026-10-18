@@ -2,27 +2,28 @@
 
 ## Objective
 
-Describe the business need, technical objective, and expected outcome for this exercise.
+Deliver a reliable service layer and API contract that handles complaint data safely and consistently.
 
 ## Solution approach
 
-1. Define the requirement clearly.
-2. Identify the key inputs and outputs.
-3. Produce a working implementation or design artifact.
-4. Validate the result against the acceptance criteria.
+1. Define clear endpoints, payloads, and validation rules.
+2. Model core service responsibilities and business logic.
+3. Cover happy paths, edge conditions, and error handling.
+4. Add tests and review checkpoints so the service is production-ready.
 
 ## Deliverables
 
-- Functional or design output
-- Supporting notes
-- Validation checklist
+- Working implementation or design artifact
+- Supporting rationale and assumptions
+- Validation checklist linked to the sprint objective
+- Clear handoff notes for the next exercise
 
 ## Dependencies and handoff
 
-- Identify any upstream prerequisites
-- Describe how this solution feeds the next task
-- Note any gaps or assumptions
+- Confirm the inputs and prerequisite work from earlier exercises.
+- Explain how the output feeds the next stage in the complaint-resolution workflow.
+- Record any ambiguity, risk, or required validation before sign-off.
 
 ## Completion status
 
-Ready for implementation and review.
+Completed as a reference solution for the validated curriculum.
