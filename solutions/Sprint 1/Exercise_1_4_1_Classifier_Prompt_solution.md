@@ -1,52 +1,45 @@
-# Exercise 1 4 1 Classifier Prompt - Solution
-
-## Summary
-This document provides a concrete solution approach for the Exercise 1 4 1 Classifier Prompt exercise. The goal is to make the task actionable, traceable, and aligned to the wider complaint-resolution journey.
+# Classifier Prompt Solution
 
 ## Objective
-Build the understanding layer that categorises complaints and extracts the structured facts required for downstream processing.
+Implement a reliable complaint classification prompt that routes issues consistently and uses a structured output that downstream systems can trust.
 
-## Recommended implementation
-1. Review the business requirement and confirm the exact expected artefact.
-2. Identify the dependent inputs, stakeholders, and constraints that shape the work.
-3. Produce the solution in a format that is clear enough for implementation or review.
-4. Validate the output against adjacent sprint tasks to ensure continuity.
-5. Record assumptions, risks, and handoff notes before moving on.
+## Example solution
+Use a prompt that asks the model to classify the complaint into one of a fixed taxonomy such as:
+- payment failure
+- account access issue
+- billing dispute
+- service disruption
+- fraud or suspicious activity
+- policy interpretation
 
-## Suggested deliverables
-- Working business or technical artefact for the task.
-- Supporting rationale and assumptions.
-- Validation checklist with measurable checkpoints.
-- Clear next-step handoff into the following exercise.
+## Prompt pattern
+You are a complaint triage assistant for a retail bank. Read the complaint text and classify it into one of the allowed categories. Return JSON only with these fields:
+- complaint_type
+- urgency
+- confidence
+- summary
+- required_evidence
+- recommended_next_step
 
-## Reference notes
-# Exercise_1_4_1_Classifier_Prompt
+## Business rules
+- If the complaint is about money movement, check for account-level and transaction-level context.
+- If there is risk or policy ambiguity, mark urgency as high and escalate for manual review.
+- Do not make a final resolution decision without policy and evidence checks.
 
-## Objective
+## Example output
+```json
+{
+  "complaint_type": "billing dispute",
+  "urgency": "medium",
+  "confidence": 0.91,
+  "summary": "Customer disputes a fee applied to an account after a failed transfer attempt.",
+  "required_evidence": ["account history", "fee schedule", "transaction timeline"],
+  "recommended_next_step": "review billing policy and account transaction ledger"
+}
+```
 
-Build a reliable complaint understanding layer that classifies issues and extracts facts for downstream workflows.
-
-## Solution approach
-
-1. Design a prompt or rule set that categorises each complaint consistently.
-2. Extract structured fields like product, issue, urgency, and customer context.
-3. Validate examples and edge cases for accuracy and completeness.
-4. Make the outputs ready for analytics, triage, and later resolution workflows.
-
-## Deliverables
-
-- Working implementation or design artifact
-- Supporting rationale and assumptions
-- Validation checklist linked to the sprint objective
-- Clear handoff notes for the next exercise
-
-## Dependencies and handoff
-
-- Confirm the inputs and prerequisite work from earlier exercises.
-- Explain how the output feeds the next stage in the complaint-resolution workflow.
-- Record any ambiguity, risk, or required validation before sign-off.
-
-## Completion status
-
-Completed as a reference solution for the validated curriculum.
-
+## Acceptance criteria
+- The classifier returns valid structured JSON.
+- Categories are limited to the approved taxonomy.
+- High-risk cases are escalated appropriately.
+- Output supports downstream review and operational routing.

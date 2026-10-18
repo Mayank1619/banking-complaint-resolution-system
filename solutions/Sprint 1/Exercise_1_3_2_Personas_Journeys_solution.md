@@ -1,52 +1,37 @@
-# Exercise 1 3 2 Personas Journeys - Solution
-
-## Summary
-This document provides a concrete solution approach for the Exercise 1 3 2 Personas Journeys exercise. The goal is to make the task actionable, traceable, and aligned to the wider complaint-resolution journey.
+# Personas and Customer Journey Solution
 
 ## Objective
-Turn the business problem into a clear specification, user journey, and acceptance criteria that engineering and analytics can operate from.
+Model the real users and journey steps that drive complaint resolution so the system is built around operational reality rather than generic assumptions.
 
-## Recommended implementation
-1. Review the business requirement and confirm the exact expected artefact.
-2. Identify the dependent inputs, stakeholders, and constraints that shape the work.
-3. Produce the solution in a format that is clear enough for implementation or review.
-4. Validate the output against adjacent sprint tasks to ensure continuity.
-5. Record assumptions, risks, and handoff notes before moving on.
+## Personas
+### Complaint customer
+- Reports the issue after a failed transaction, billing problem, or service disruption.
+- Wants a quick acknowledgement and a clear, fair resolution path.
+- Expects the company to act transparently and update them as the issue moves through the process.
 
-## Suggested deliverables
-- Working business or technical artefact for the task.
-- Supporting rationale and assumptions.
-- Validation checklist with measurable checkpoints.
-- Clear next-step handoff into the following exercise.
+### Complaint analyst
+- Reviews incoming complaints and verifies the facts.
+- Classifies issues and gathers supporting evidence from data and policy sources.
+- Needs a clean triage workflow and access to structured customer context.
 
-## Reference notes
-# Exercise_1_3_2_Personas_Journeys
+### Supervisor or reviewer
+- Reviews escalated or sensitive complaints.
+- Confirms policy compliance and final resolution decisions.
+- Requires auditable evidence and approval controls.
 
-## Objective
+## Journey flow
+1. Complaint is raised by the customer.
+2. Intake captures the details, complaint type, and relevant evidence.
+3. Triage identifies urgency, category, and required action.
+4. The analyst investigates with policy and system context.
+5. A recommendation is generated and reviewed.
+6. Human approval closes the loop with final resolution and customer communication.
 
-Translate the business problem into a structured complaint domain model, journey, and acceptance criteria.
+## Deliverable
+A persona map and journey narrative that captures user goals, system touchpoints, risks, and required approvals in the complaint process.
 
-## Solution approach
-
-1. Map the complaint lifecycle and customer experience.
-2. Define the key customer and staff personas involved in resolution.
-3. Capture data fields, status changes, and evidence requirements.
-4. Turn the output into a reusable specification for downstream engineering and analytics.
-
-## Deliverables
-
-- Working implementation or design artifact
-- Supporting rationale and assumptions
-- Validation checklist linked to the sprint objective
-- Clear handoff notes for the next exercise
-
-## Dependencies and handoff
-
-- Confirm the inputs and prerequisite work from earlier exercises.
-- Explain how the output feeds the next stage in the complaint-resolution workflow.
-- Record any ambiguity, risk, or required validation before sign-off.
-
-## Completion status
-
-Completed as a reference solution for the validated curriculum.
-
+## Acceptance criteria
+- Every major actor in the complaint journey is represented.
+- The journey maps to real steps in the support workflow.
+- Risks and approval points are explicit.
+- The result is clear enough to guide product, engineering, and support design.

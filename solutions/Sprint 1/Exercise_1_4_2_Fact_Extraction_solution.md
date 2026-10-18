@@ -1,52 +1,41 @@
-# Exercise 1 4 2 Fact Extraction - Solution
-
-## Summary
-This document provides a concrete solution approach for the Exercise 1 4 2 Fact Extraction exercise. The goal is to make the task actionable, traceable, and aligned to the wider complaint-resolution journey.
+# Fact Extraction Solution
 
 ## Objective
-Build the understanding layer that categorises complaints and extracts the structured facts required for downstream processing.
+Extract the most important complaint details into structured fields that can power triage, investigation, and final resolution workflows.
 
-## Recommended implementation
-1. Review the business requirement and confirm the exact expected artefact.
-2. Identify the dependent inputs, stakeholders, and constraints that shape the work.
-3. Produce the solution in a format that is clear enough for implementation or review.
-4. Validate the output against adjacent sprint tasks to ensure continuity.
-5. Record assumptions, risks, and handoff notes before moving on.
+## Example extracted fields
+- customer_id
+- product_type
+- issue_category
+- transaction_reference
+- amount
+- date_of_incident
+- channel_used
+- account_status
+- supporting_documents
+- customer_impact
 
-## Suggested deliverables
-- Working business or technical artefact for the task.
-- Supporting rationale and assumptions.
-- Validation checklist with measurable checkpoints.
-- Clear next-step handoff into the following exercise.
+## Example output
+```json
+{
+  "customer_id": "CUST-10492",
+  "product_type": "current_account",
+  "issue_category": "payment_failed",
+  "amount": 425.00,
+  "date_of_incident": "2026-10-04",
+  "channel_used": "mobile_app",
+  "customer_impact": "unable to complete debit card payment",
+  "supporting_documents": ["transaction screenshot", "statement excerpt"]
+}
+```
 
-## Reference notes
-# Exercise_1_4_2_Fact_Extraction
+## Implementation guidance
+- Normalise dates, amounts, and account references before saving.
+- Prefer structured confidence values for uncertain fields.
+- Flag any missing critical fields for human review.
+- Keep an evidence trail for all extracted attributes.
 
-## Objective
-
-Build a reliable complaint understanding layer that classifies issues and extracts facts for downstream workflows.
-
-## Solution approach
-
-1. Design a prompt or rule set that categorises each complaint consistently.
-2. Extract structured fields like product, issue, urgency, and customer context.
-3. Validate examples and edge cases for accuracy and completeness.
-4. Make the outputs ready for analytics, triage, and later resolution workflows.
-
-## Deliverables
-
-- Working implementation or design artifact
-- Supporting rationale and assumptions
-- Validation checklist linked to the sprint objective
-- Clear handoff notes for the next exercise
-
-## Dependencies and handoff
-
-- Confirm the inputs and prerequisite work from earlier exercises.
-- Explain how the output feeds the next stage in the complaint-resolution workflow.
-- Record any ambiguity, risk, or required validation before sign-off.
-
-## Completion status
-
-Completed as a reference solution for the validated curriculum.
-
+## Acceptance criteria
+- Required facts are extracted consistently.
+- Output is compatible with downstream routing and risk review.
+- Uncertain or incomplete extraction is flagged instead of guessed.

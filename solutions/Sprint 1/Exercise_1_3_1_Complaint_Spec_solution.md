@@ -1,52 +1,44 @@
-# Exercise 1 3 1 Complaint Spec - Solution
-
-## Summary
-This document provides a concrete solution approach for the Exercise 1 3 1 Complaint Spec exercise. The goal is to make the task actionable, traceable, and aligned to the wider complaint-resolution journey.
+# Complaint Specification
 
 ## Objective
-Turn the business problem into a clear specification, user journey, and acceptance criteria that engineering and analytics can operate from.
+Define the functional contract for the complaint-resolution system so engineering, QA, and operations can align on behavior, inputs, rules, and expected outcomes.
 
-## Recommended implementation
-1. Review the business requirement and confirm the exact expected artefact.
-2. Identify the dependent inputs, stakeholders, and constraints that shape the work.
-3. Produce the solution in a format that is clear enough for implementation or review.
-4. Validate the output against adjacent sprint tasks to ensure continuity.
-5. Record assumptions, risks, and handoff notes before moving on.
+## Scope
+The system must support complaint intake, triage, routing, evidence gathering, investigation, and human approval before final action. The specification should emphasise behaviour and guardrails rather than framework choices.
 
-## Suggested deliverables
-- Working business or technical artefact for the task.
-- Supporting rationale and assumptions.
-- Validation checklist with measurable checkpoints.
-- Clear next-step handoff into the following exercise.
+## Core business flow
+1. A customer or internal user submits a complaint with supporting information.
+2. The system classifies the complaint into a known issue area and extracts relevant facts.
+3. The complaint is routed to the appropriate team, with policy and risk checks applied.
+4. A reviewer evaluates recommended actions, evidence, and customer context.
+5. A human approves or rejects the proposed resolution and records the decision.
 
-## Reference notes
-# Exercise_1_3_1_Complaint_Spec
+## Main entities
+- Customer: party reporting a problem or impacted by a complaint.
+- Complaint: complaint record with category, severity, status, and timeline.
+- Evidence: supporting documents, policy references, and customer interaction data.
+- Agent or reviewer: user responsible for triage, resolution review, or escalation.
+- Policy: rule set or constraint that determines safe and compliant handling.
 
-## Objective
+## Functional requirements
+- Every complaint must have a unique ID and clear status.
+- A complaint must be assignable to a category and severity level.
+- The classification and extraction phases must use structured, reviewable outputs.
+- Human approval is required for sensitive or policy-dependent outcomes.
+- The system must preserve an audit trail of recommendations and decisions.
 
-Translate the business problem into a structured complaint domain model, journey, and acceptance criteria.
+## Business rules
+- Complaints without sufficient evidence must be routed for manual clarification.
+- Unclear or high-risk cases should escalate to a human reviewer.
+- The system must never act autonomously on sensitive customer outcomes without approval.
+- Evidence and recommendation versions should remain auditable.
 
-## Solution approach
+## Acceptance criteria
+- A complaint can be created and categorised end to end.
+- The routing logic is explicit and reviewable.
+- The output includes customer context, supporting evidence, and policy references.
+- Human approval is clearly enforced for sensitive actions.
+- The complaint journey is traceable from intake to final review.
 
-1. Map the complaint lifecycle and customer experience.
-2. Define the key customer and staff personas involved in resolution.
-3. Capture data fields, status changes, and evidence requirements.
-4. Turn the output into a reusable specification for downstream engineering and analytics.
-
-## Deliverables
-
-- Working implementation or design artifact
-- Supporting rationale and assumptions
-- Validation checklist linked to the sprint objective
-- Clear handoff notes for the next exercise
-
-## Dependencies and handoff
-
-- Confirm the inputs and prerequisite work from earlier exercises.
-- Explain how the output feeds the next stage in the complaint-resolution workflow.
-- Record any ambiguity, risk, or required validation before sign-off.
-
-## Completion status
-
-Completed as a reference solution for the validated curriculum.
-
+## Handoff
+This specification becomes the source of truth for downstream implementation, testing, and operations work.

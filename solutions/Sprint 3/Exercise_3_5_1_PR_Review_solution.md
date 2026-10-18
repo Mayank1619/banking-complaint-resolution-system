@@ -1,52 +1,34 @@
-# Exercise 3 5 1 PR Review - Solution
-
-## Summary
-This document provides a concrete solution approach for the Exercise 3 5 1 PR Review exercise. The goal is to make the task actionable, traceable, and aligned to the wider complaint-resolution journey.
+# Service Layer and API Solution
 
 ## Objective
-Translate the business requirement into a practical, reviewable implementation that is usable by the next stage of the sprint.
+Create a reliable transaction and service layer for the complaint-resolution system, with clear endpoints, validations, and quality checks.
 
-## Recommended implementation
-1. Review the business requirement and confirm the exact expected artefact.
-2. Identify the dependent inputs, stakeholders, and constraints that shape the work.
-3. Produce the solution in a format that is clear enough for implementation or review.
-4. Validate the output against adjacent sprint tasks to ensure continuity.
-5. Record assumptions, risks, and handoff notes before moving on.
+## Example API design
+- POST /complaints: create a complaint
+- GET /complaints/{id}: fetch complaint details
+- GET /complaints: list complaints by status and customer
+- POST /complaints/{id}/reviews: submit analyst action or recommendation
+- POST /complaints/{id}/approval: record human approval decision
 
-## Suggested deliverables
-- Working business or technical artefact for the task.
-- Supporting rationale and assumptions.
-- Validation checklist with measurable checkpoints.
-- Clear next-step handoff into the following exercise.
+## Contract principles
+- Inputs must be validated before any state change.
+- Responses should be consistent and traceable.
+- Failed operations should return meaningful error codes and log context.
+- Sensitive decisions require explicit approval records.
 
-## Reference notes
-# Exercise_3_5_1_PR_Review
+## Example response
+```json
+{
+  "complaint_id": "CMP-1024",
+  "status": "in_review",
+  "category": "payment_failed",
+  "severity": "medium",
+  "resolution_status": "pending_approval"
+}
+```
 
-## Objective
-
-Deliver a reliable service layer and API contract that handles complaint data safely and consistently.
-
-## Solution approach
-
-1. Define clear endpoints, payloads, and validation rules.
-2. Model core service responsibilities and business logic.
-3. Cover happy paths, edge conditions, and error handling.
-4. Add tests and review checkpoints so the service is production-ready.
-
-## Deliverables
-
-- Working implementation or design artifact
-- Supporting rationale and assumptions
-- Validation checklist linked to the sprint objective
-- Clear handoff notes for the next exercise
-
-## Dependencies and handoff
-
-- Confirm the inputs and prerequisite work from earlier exercises.
-- Explain how the output feeds the next stage in the complaint-resolution workflow.
-- Record any ambiguity, risk, or required validation before sign-off.
-
-## Completion status
-
-Completed as a reference solution for the validated curriculum.
-
+## Acceptance criteria
+- API paths match the business flow and support actual operational work.
+- Validation and error handling are consistent.
+- Service logic and tests cover happy paths and key failure modes.
+- Human approval is enforced for sensitive decision points.
