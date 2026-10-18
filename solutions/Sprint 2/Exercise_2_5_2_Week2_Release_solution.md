@@ -1,21 +1,32 @@
-# Frontend and Release Solution
+# Exercise 2 5 2 Week2 Release
 
 ## Objective
-Deliver a user-friendly complaint workflow and a production-ready operational path that supports clarity, trust, and resilience.
+Deliver the actual business and technical output the sprint requires so the team can move from discovery into an implementation-ready solution.
 
-## Solution design
-- Provide a clear complaint dashboard with status, priority, and owner.
-- Show evidence, customer context, and routing history in one place.
-- Expose approval and escalation actions clearly to staff users.
-- Add logs, health checks, and operational metrics so the system can be monitored in production.
+## Business problem
+The complaint-resolution programme needs a practical, reviewable outcome that is tailored to the real business problem and ready for operational use.
 
-## Example quality gates
-- Dashboard loads with proper status and next action indicators.
-- Sensitive actions require explicit approval.
-- Logs capture the complaint lifecycle and review decisions.
-- Deployment includes smoke tests and rollback procedures.
+## Requirements gathered
+- Define the real problem and required output for the exercise.
+- Document the key business workflow and technical requirements.
+- Capture risks, quality checks, and acceptance criteria.
+- Translate the result into a handoff-ready deliverable for the next step.
 
-## Acceptance criteria
-- The user experience supports fast review and low cognitive load.
-- The release process includes risks, validation checks, and operational support.
-- The solution is robust enough for production call-handling and executive review.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
+
+## Success metrics
+- The output solves the real business need.
+- The artefact is explicit and reviewable.
+- The team can move to the next sprint phase with less ambiguity.
+- The solution is grounded in the practical complaint workflow.
+
+## Handoff
+This work becomes the concrete deliverable for the exercise and feeds the next stage of the banking complaint-resolution programme.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

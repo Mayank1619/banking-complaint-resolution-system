@@ -1,34 +1,32 @@
-# Service Layer and API Solution
+# API and Service Delivery Workbook
 
 ## Objective
-Create a reliable transaction and service layer for the complaint-resolution system, with clear endpoints, validations, and quality checks.
+Design a reliable complaint service API and supporting domain model that can handle recorded complaint data and operational actions.
 
-## Example API design
-- POST /complaints: create a complaint
-- GET /complaints/{id}: fetch complaint details
-- GET /complaints: list complaints by status and customer
-- POST /complaints/{id}/reviews: submit analyst action or recommendation
-- POST /complaints/{id}/approval: record human approval decision
+## Business problem
+The business now needs an implementation-ready interface for complaint creation, retrieval, review, and approval so the workflow can support real operational work.
 
-## Contract principles
-- Inputs must be validated before any state change.
-- Responses should be consistent and traceable.
-- Failed operations should return meaningful error codes and log context.
-- Sensitive decisions require explicit approval records.
+## Requirements gathered
+- Define the domain model for complaints, evidence, and supporting entities.
+- Create service responsibilities and API routes for complaint workflow actions.
+- Specify validation, error handling, and approval points for sensitive decisions.
+- Document how the API supports business operations and downstream analytics.
 
-## Example response
-```json
-{
-  "complaint_id": "CMP-1024",
-  "status": "in_review",
-  "category": "payment_failed",
-  "severity": "medium",
-  "resolution_status": "pending_approval"
-}
-```
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Acceptance criteria
-- API paths match the business flow and support actual operational work.
-- Validation and error handling are consistent.
-- Service logic and tests cover happy paths and key failure modes.
-- Human approval is enforced for sensitive decision points.
+## Success metrics
+- The service layer matches real operational use cases.
+- Exceptions and approval points are explicit and testable.
+- The API can support front-end and downstream integration safely.
+- The domain model is clearer and easier to evolve.
+
+## Handoff
+This API and service work becomes the operational layer that connects the complaint workflow to actual intelligent processing and review.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

@@ -1,45 +1,32 @@
-# Classifier Prompt Solution
+# Classifier Prompt and Triage Logic
 
 ## Objective
-Implement a reliable complaint classification prompt that routes issues consistently and uses a structured output that downstream systems can trust.
+Build a reliable mechanism for identifying complaint type, urgency, and required next action from raw customer text.
 
-## Example solution
-Use a prompt that asks the model to classify the complaint into one of a fixed taxonomy such as:
-- payment failure
-- account access issue
-- billing dispute
-- service disruption
-- fraud or suspicious activity
-- policy interpretation
+## Business problem
+The bank needs a prompt-based triage mechanism that can interpret customer complaints consistently and route them to the correct team without depending on manual, inconsistent classification.
 
-## Prompt pattern
-You are a complaint triage assistant for a retail bank. Read the complaint text and classify it into one of the allowed categories. Return JSON only with these fields:
-- complaint_type
-- urgency
-- confidence
-- summary
-- required_evidence
-- recommended_next_step
+## Requirements gathered
+- Define the allowed complaint categories and classification rules.
+- Design a structured output with category, urgency, evidence needed, and next action.
+- Capture rejection, ambiguity, and escalation paths for low-confidence cases.
+- Validate the logic against realistic complaint examples.
 
-## Business rules
-- If the complaint is about money movement, check for account-level and transaction-level context.
-- If there is risk or policy ambiguity, mark urgency as high and escalate for manual review.
-- Do not make a final resolution decision without policy and evidence checks.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Example output
-```json
-{
-  "complaint_type": "billing dispute",
-  "urgency": "medium",
-  "confidence": 0.91,
-  "summary": "Customer disputes a fee applied to an account after a failed transfer attempt.",
-  "required_evidence": ["account history", "fee schedule", "transaction timeline"],
-  "recommended_next_step": "review billing policy and account transaction ledger"
-}
-```
+## Success metrics
+- Complaint classification is more consistent across samples.
+- High-risk cases are identified earlier and reviewed appropriately.
+- Support teams have a structured and explainable decision trail.
+- The prompt output is ready for downstream routing and investigation.
 
-## Acceptance criteria
-- The classifier returns valid structured JSON.
-- Categories are limited to the approved taxonomy.
-- High-risk cases are escalated appropriately.
-- Output supports downstream review and operational routing.
+## Handoff
+The classifier output feeds the routing, investigation, and AI workflow so the complaint process can move from intake to action with less ambiguity.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

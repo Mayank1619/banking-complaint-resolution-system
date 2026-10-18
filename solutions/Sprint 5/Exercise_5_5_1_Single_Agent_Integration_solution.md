@@ -1,33 +1,32 @@
-# Exercise 5 5 1 Single Agent Integration
+# API and Service Delivery Workbook
 
 ## Objective
-Deliver a concrete, reviewable outcome that supports the operational complaint handling workflow and is ready for implementation or customer-facing use.
+Design a reliable complaint service API and supporting domain model that can handle recorded complaint data and operational actions.
 
-## Business context
-This exercise is part of the banking complaint resolution programme and should produce a real, reusable outcome that supports the customer journey, operations, or analytics flow. The solution should be specific enough for a delivery team to build, review, and hand off without additional interpretation.
+## Business problem
+The business now needs an implementation-ready interface for complaint creation, retrieval, review, and approval so the workflow can support real operational work.
 
-## Expected deliverable
-An implementation-ready artefact, workflow definition, or supporting model that solves the exercise in the business context of the banking complaint programme.
+## Requirements gathered
+- Define the domain model for complaints, evidence, and supporting entities.
+- Create service responsibilities and API routes for complaint workflow actions.
+- Specify validation, error handling, and approval points for sensitive decisions.
+- Document how the API supports business operations and downstream analytics.
 
-## Solution design
-1. Confirm the exact problem statement and the real-world requirement behind the exercise.
-2. Identify the core inputs, constraints, policies, and dependent data or systems.
-3. Define the expected output structure, status rules, and review checkpoints.
-4. Build the artefact in a way that is testable and easy to trace to the sprint objective.
-5. Record assumptions, risks, and handoff notes so the next step can continue without guesswork.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Recommended implementation
-- Start with the business requirement and define the success outcome in one sentence.
-- Use the relevant domain entities, workflows, and guardrails from earlier sprint work.
-- Define a clear data model, interface shape, workflow logic, or review checklist depending on the exercise type.
-- Validate the output against edge cases, policy rules, and operational constraints.
-- Ensure the result is ready for review, sign-off, and continuation by the next sprint step.
+## Success metrics
+- The service layer matches real operational use cases.
+- Exceptions and approval points are explicit and testable.
+- The API can support front-end and downstream integration safely.
+- The domain model is clearer and easier to evolve.
 
-## Example acceptance criteria
-- The output addresses the real business problem and not just a generic template.
-- The expected data, workflow, or artefact is explicit and easy to validate.
-- Security, auditability, and guardrail requirements are reflected in the design.
-- The result can be handed off to the next exercise or engineering work without ambiguity.
+## Handoff
+This API and service work becomes the operational layer that connects the complaint workflow to actual intelligent processing and review.
 
 ## Completion status
-Completed as a concrete, consultant-ready solution for the validated curriculum.
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

@@ -1,39 +1,32 @@
-# SQL and Data Query Solution
+# Data Query and Validation Workbook
 
 ## Objective
-Provide the business-facing SQL logic needed to validate complaint data, produce operational metrics, and support downstream investigation.
+Use SQL to validate complaint data, answer business questions, and confirm the data model supports operational analysis.
 
-## Example queries
-```sql
-SELECT category, COUNT(*) AS complaints
-FROM complaints
-GROUP BY category
-ORDER BY complaints DESC;
-```
+## Business problem
+The banking team needs a reliable way to inspect complaint data, calculate trends, and verify that the data model reflects real operating needs.
 
-```sql
-SELECT c.customer_id, c.complaint_id, a.account_id, a.balance
-FROM complaints c
-JOIN accounts a ON a.customer_id = c.customer_id
-WHERE c.status = 'open';
-```
+## Requirements gathered
+- Create queries that answer business questions about complaint volume, category, and urgency.
+- Use joins and aggregation logic to combine complaint and customer data meaningfully.
+- Validate the schema against realistic data and edge cases.
+- Document how the data should be interpreted for operational reporting.
 
-```sql
-SELECT
-  DATE(created_at) AS day,
-  COUNT(*) AS total_complaints,
-  SUM(CASE WHEN severity = 'high' THEN 1 ELSE 0 END) AS high_severity
-FROM complaints
-GROUP BY DATE(created_at)
-ORDER BY day;
-```
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Business value
-- Helps analysts spot complaint hotspots.
-- Supports SLA and risk monitoring.
-- Helps validate the health of the complaint pipeline.
+## Success metrics
+- The team can answer key complaint questions from the data.
+- Data quality issues are identified before they reach downstream systems.
+- The results support business review and operational monitoring.
+- The SQL logic is ready for later dashboard and reporting work.
 
-## Acceptance criteria
-- Queries return the correct population of complaints, customers, and evidence.
-- Metrics are stable and explainable to business stakeholders.
-- The SQL is readable and suitable for operational dashboards.
+## Handoff
+This query and validation work is the evidence base for the analytical view of the complaint process and the readiness of the future system.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

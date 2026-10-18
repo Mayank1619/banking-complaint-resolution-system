@@ -1,33 +1,32 @@
-# Exercise 1 2 1 Repository Setup
+# Repository Setup Workbook
 
 ## Objective
-Create the versioned engineering foundation needed for a disciplined, scalable complaint-resolution project.
+Create the project foundation needed for disciplined, traceable, and repeatable delivery.
 
-## Business context
-This exercise is part of the banking complaint resolution programme and should produce a real, reusable outcome that supports the customer journey, operations, or analytics flow. The solution should be specific enough for a delivery team to build, review, and hand off without additional interpretation.
+## Business problem
+The team needs a reliable repository structure and working convention so the complaint-resolution project can evolve without confusion, broken handoffs, or environment drift.
 
-## Expected deliverable
-A repo structure, contribution flow, environment setup, and baseline documentation that give the team a consistent delivery starting point.
+## Requirements gathered
+- Define the project structure, folders, and naming conventions.
+- Set up a clear baseline for code, tests, docs, and data assets.
+- Document environment setup and dependency expectations for all contributors.
+- Create handoff and review rules that keep work traceable across sprint phases.
 
-## Solution design
-1. Confirm the exact problem statement and the real-world requirement behind the exercise.
-2. Identify the core inputs, constraints, policies, and dependent data or systems.
-3. Define the expected output structure, status rules, and review checkpoints.
-4. Build the artefact in a way that is testable and easy to trace to the sprint objective.
-5. Record assumptions, risks, and handoff notes so the next step can continue without guesswork.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Recommended implementation
-- Start with the business requirement and define the success outcome in one sentence.
-- Use the relevant domain entities, workflows, and guardrails from earlier sprint work.
-- Define a clear data model, interface shape, workflow logic, or review checklist depending on the exercise type.
-- Validate the output against edge cases, policy rules, and operational constraints.
-- Ensure the result is ready for review, sign-off, and continuation by the next sprint step.
+## Success metrics
+- The team can onboard quickly with a consistent repo layout.
+- Environment drift is reduced across contributors.
+- Work is easier to review, trace, and hand off.
+- Sprint iterations start from a clean and predictable baseline.
 
-## Example acceptance criteria
-- The output addresses the real business problem and not just a generic template.
-- The expected data, workflow, or artefact is explicit and easy to validate.
-- Security, auditability, and guardrail requirements are reflected in the design.
-- The result can be handed off to the next exercise or engineering work without ambiguity.
+## Handoff
+This repository baseline supports the later delivery work, testing, and team continuity across the complaint-resolution project.
 
 ## Completion status
-Completed as a concrete, consultant-ready solution for the validated curriculum.
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

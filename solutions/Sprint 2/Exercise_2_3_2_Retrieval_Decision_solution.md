@@ -1,30 +1,32 @@
-# Retrieval and Agent Solution
+# Data Query and Validation Workbook
 
 ## Objective
-Build a reliable evidence-backed workflow so the complaint-support system can retrieve the right policy, customer history, and operational context before making a recommendation.
+Use SQL to validate complaint data, answer business questions, and confirm the data model supports operational analysis.
 
-## Design approach
-1. Ingest complaint source documents and policy references into a searchable, structured store.
-2. Chunk documents and preserve metadata such as source, policy version, and date.
-3. Retrieve the top relevant passages for a complaint or investigation request.
-4. Ground the recommendation in evidence and required policy context.
-5. Require human approval for sensitive or policy-critical outcomes.
+## Business problem
+The banking team needs a reliable way to inspect complaint data, calculate trends, and verify that the data model reflects real operating needs.
 
-## Example workflow
-- complaint arrives
-- triage identifies category and urgency
-- relevant policy and evidence docs are retrieved
-- model produces a grounded recommendation
-- reviewer approves or rejects before operational action
+## Requirements gathered
+- Create queries that answer business questions about complaint volume, category, and urgency.
+- Use joins and aggregation logic to combine complaint and customer data meaningfully.
+- Validate the schema against realistic data and edge cases.
+- Document how the data should be interpreted for operational reporting.
 
-## Key principles
-- Retrieval must be traceable and explainable.
-- Answers should cite the evidence used.
-- Policy gaps or ambiguous rules must trigger escalation.
-- The system should support audit and review, not autonomous action.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Acceptance criteria
-- Retrieval returns relevant, grounded evidence.
-- The recommendation can be traced back to source material.
-- Human approval remains explicit for decisions with customer impact.
-- The workflow remains observable and auditable.
+## Success metrics
+- The team can answer key complaint questions from the data.
+- Data quality issues are identified before they reach downstream systems.
+- The results support business review and operational monitoring.
+- The SQL logic is ready for later dashboard and reporting work.
+
+## Handoff
+This query and validation work is the evidence base for the analytical view of the complaint process and the readiness of the future system.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

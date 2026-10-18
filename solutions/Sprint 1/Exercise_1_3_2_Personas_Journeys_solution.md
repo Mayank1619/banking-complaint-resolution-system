@@ -1,37 +1,32 @@
-# Personas and Customer Journey Solution
+# Personas and Customer Journey
 
 ## Objective
-Model the real users and journey steps that drive complaint resolution so the system is built around operational reality rather than generic assumptions.
+Map the people, touchpoints, and emotional journey behind customer complaint handling so the workflow meets real user needs.
 
-## Personas
-### Complaint customer
-- Reports the issue after a failed transaction, billing problem, or service disruption.
-- Wants a quick acknowledgement and a clear, fair resolution path.
-- Expects the company to act transparently and update them as the issue moves through the process.
+## Business problem
+Customers experience complaints across multiple channels and often feel frustrated when the issue is not understood quickly. Internal teams also need a consistent, low-friction way to investigate and resolve complaints.
 
-### Complaint analyst
-- Reviews incoming complaints and verifies the facts.
-- Classifies issues and gathers supporting evidence from data and policy sources.
-- Needs a clean triage workflow and access to structured customer context.
+## Requirements gathered
+- Document the key personas involved in complaint intake and resolution.
+- Map the journey from complaint submission to resolution and closure.
+- Highlight pain points, delays, and friction in today’s process.
+- Define the experience and supports needed for each persona.
 
-### Supervisor or reviewer
-- Reviews escalated or sensitive complaints.
-- Confirms policy compliance and final resolution decisions.
-- Requires auditable evidence and approval controls.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Journey flow
-1. Complaint is raised by the customer.
-2. Intake captures the details, complaint type, and relevant evidence.
-3. Triage identifies urgency, category, and required action.
-4. The analyst investigates with policy and system context.
-5. A recommendation is generated and reviewed.
-6. Human approval closes the loop with final resolution and customer communication.
+## Success metrics
+- Customer journeys are easier to understand and improve.
+- Support teams can prioritise the right interventions.
+- Approved processes make risk and complaint handling more consistent.
+- Escalations and pain points are visible before implementation.
 
-## Deliverable
-A persona map and journey narrative that captures user goals, system touchpoints, risks, and required approvals in the complaint process.
+## Handoff
+The persona and journey findings become the basis for product decisions, service design, and later automated workflow design.
 
-## Acceptance criteria
-- Every major actor in the complaint journey is represented.
-- The journey maps to real steps in the support workflow.
-- Risks and approval points are explicit.
-- The result is clear enough to guide product, engineering, and support design.
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

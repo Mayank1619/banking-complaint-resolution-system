@@ -1,41 +1,32 @@
-# Fact Extraction Solution
+# Fact Extraction Workbook
 
 ## Objective
-Extract the most important complaint details into structured fields that can power triage, investigation, and final resolution workflows.
+Extract the critical customer, account, and issue facts needed to understand and resolve a complaint reliably.
 
-## Example extracted fields
-- customer_id
-- product_type
-- issue_category
-- transaction_reference
-- amount
-- date_of_incident
-- channel_used
-- account_status
-- supporting_documents
-- customer_impact
+## Business problem
+Once the complaint is classified, the next challenge is transforming raw text into structured fields that can support triage, routing, and investigation.
 
-## Example output
-```json
-{
-  "customer_id": "CUST-10492",
-  "product_type": "current_account",
-  "issue_category": "payment_failed",
-  "amount": 425.00,
-  "date_of_incident": "2026-10-04",
-  "channel_used": "mobile_app",
-  "customer_impact": "unable to complete debit card payment",
-  "supporting_documents": ["transaction screenshot", "statement excerpt"]
-}
-```
+## Requirements gathered
+- Identify the critical fields needed for complaint investigation and action.
+- Define the extraction schema for product, issue type, customer, amount, dates, and evidence.
+- Specify how uncertain or missing facts should be flagged for review.
+- Validate the extracted output against repeatable sample scenarios.
 
-## Implementation guidance
-- Normalise dates, amounts, and account references before saving.
-- Prefer structured confidence values for uncertain fields.
-- Flag any missing critical fields for human review.
-- Keep an evidence trail for all extracted attributes.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Acceptance criteria
-- Required facts are extracted consistently.
-- Output is compatible with downstream routing and risk review.
-- Uncertain or incomplete extraction is flagged instead of guessed.
+## Success metrics
+- Key facts are captured consistently across complaints.
+- Investigators can act on structured evidence instead of raw text alone.
+- Data quality improves for later analysis and reporting.
+- Uncertain outputs are traced for human review instead of silently accepted.
+
+## Handoff
+The fact extraction output becomes the input for downstream investigation, routing, and reporting workflows.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.

@@ -1,44 +1,32 @@
 # Complaint Specification
 
 ## Objective
-Define the functional contract for the complaint-resolution system so engineering, QA, and operations can align on behavior, inputs, rules, and expected outcomes.
+Translate the discovered business need into a clear, testable product specification for complaint intake, triage, and resolution.
 
-## Scope
-The system must support complaint intake, triage, routing, evidence gathering, investigation, and human approval before final action. The specification should emphasise behaviour and guardrails rather than framework choices.
+## Business problem
+The complaint-resolution process needs a shared definition of the workflow, customer journey, business rules, and success criteria so engineering, QA, and operations understand the same target.
 
-## Core business flow
-1. A customer or internal user submits a complaint with supporting information.
-2. The system classifies the complaint into a known issue area and extracts relevant facts.
-3. The complaint is routed to the appropriate team, with policy and risk checks applied.
-4. A reviewer evaluates recommended actions, evidence, and customer context.
-5. A human approves or rejects the proposed resolution and records the decision.
+## Requirements gathered
+- Document complaint intake, triage, and resolution flow end to end.
+- Define user stories, scope, and boundaries for the complaint system.
+- Capture functional rules for severity, routing, evidence, and escalation.
+- State acceptance criteria that can be validated across business and technical teams.
 
-## Main entities
-- Customer: party reporting a problem or impacted by a complaint.
-- Complaint: complaint record with category, severity, status, and timeline.
-- Evidence: supporting documents, policy references, and customer interaction data.
-- Agent or reviewer: user responsible for triage, resolution review, or escalation.
-- Policy: rule set or constraint that determines safe and compliant handling.
+## Key outputs to produce
+- Stakeholder and scope overview
+- Functional requirements and constraints
+- Quality gates and edge cases
+- Acceptance criteria tied to the sprint objective
+- Clear handoff notes for downstream work
 
-## Functional requirements
-- Every complaint must have a unique ID and clear status.
-- A complaint must be assignable to a category and severity level.
-- The classification and extraction phases must use structured, reviewable outputs.
-- Human approval is required for sensitive or policy-dependent outcomes.
-- The system must preserve an audit trail of recommendations and decisions.
-
-## Business rules
-- Complaints without sufficient evidence must be routed for manual clarification.
-- Unclear or high-risk cases should escalate to a human reviewer.
-- The system must never act autonomously on sensitive customer outcomes without approval.
-- Evidence and recommendation versions should remain auditable.
-
-## Acceptance criteria
-- A complaint can be created and categorised end to end.
-- The routing logic is explicit and reviewable.
-- The output includes customer context, supporting evidence, and policy references.
-- Human approval is clearly enforced for sensitive actions.
-- The complaint journey is traceable from intake to final review.
+## Success metrics
+- Each complaint has a clear workflow from intake to resolution.
+- Analysts and support teams can route work consistently.
+- Acceptance criteria are testable by business and engineering stakeholders.
+- The system supports review, escalation, and audit needs.
 
 ## Handoff
-This specification becomes the source of truth for downstream implementation, testing, and operations work.
+This specification becomes the contract for later system build, validation, and handoff across prompt, data, API, and agent phases.
+
+## Completion status
+Completed as the actual solution for this exercise in the banking complaint-resolution programme.
