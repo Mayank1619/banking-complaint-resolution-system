@@ -36,5 +36,10 @@ Completed work:
 - The output is understandable to both technical and business stakeholders.
 - The work is ready for handoff into the next sprint without rework.
 
+## Acceptance criteria
+- The release explains the core complaint foundation and how it supports the next sprint.
+- The solution demonstrates that the data model, SQL analysis, and repository design work together coherently.
+- The work is clear enough for stakeholders and engineers to review and carry forward into implementation.
+
 ## Handoff
 This Week 2 release is a working foundation for the next sprint, where the team will formalise the complaint service and REST API layer.
